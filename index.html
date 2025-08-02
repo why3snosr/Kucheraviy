@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kucheraviy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html">
+      <img src="images/kucheraviy.jpg" alt="Kucheraviy Logo" class="logo" />
+    </a>
+    <nav>
+      <button>👤</button>
+      <button>🛍️</button>
+    </nav>
+  </header>
+
+  <!-- Main Product Grid -->
+  <main>
+    <section class="product-grid">
+      <a href="shorts-black.html" class="product-card">
+        <img
+          src="images/shorts-black.jpg"
+          data-hover="images/shorts-black2.jpg"
+          alt="Kucheraviy Shorts Black"
+          class="product-img"
+        />
+        <div class="product-info">
+          <h2>Kucheraviy Shorts Black</h2>
+          <p>₴1,700.00 UAH</p>
+        </div>
+      </a>
+    </section>
+  </main>
+
+  <!-- JS для ховеру -->
+  <script>
+    document.querySelectorAll(".product-img").forEach((img) => {
+      const originalSrc = img.getAttribute("src");
+      const hoverSrc = img.getAttribute("data-hover");
+
+      img.addEventListener("mouseenter", () => {
+        img.src = hoverSrc;
+      });
+
+      img.addEventListener("mouseleave", () => {
+        img.src = originalSrc;
+      });
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

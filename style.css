@@ -1,0 +1,304 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Satoshi', sans-serif;
+  background-color: #121212;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  background-color: #000;
+}
+
+.logo {
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+nav button:hover {
+  transform: scale(1.1);
+}
+
+main {
+  display: flex;
+  justify-content: flex-start;
+  padding: 60px 40px;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.product-card {
+  user-select: none;
+  width: 400px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-img {
+  width: 100%;
+  height: 550px; /* фіксована висота */
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+  transition: box-shadow 0.3s ease;
+}
+
+.product-img:hover {
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.product-info {
+  text-align: left;
+  margin-top: 14px;
+}
+
+.product-info h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.product-info p {
+  font-size: 17px;
+  color: #bbb;
+}
+
+.product-card,
+.product-card:link,
+.product-card:visited,
+.product-card:hover,
+.product-card:active {
+  color: inherit;            /* колір тексту наслідуємо (білий) */
+  text-decoration: none;     /* без підкреслення */
+}
+
+
+
+
+
+
+
+
+
+.product-detail {
+  display: flex;
+  gap: 50px;
+  padding: 60px 40px;
+  flex-wrap: wrap;
+}
+
+.left {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-image {
+  width: 100%;
+  max-height: 550px;
+  object-fit: contain;
+  border-radius: 20px;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  cursor: pointer;
+  object-fit: cover;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.gallery img:hover,
+.gallery img.selected {
+  border-color: #ff0000;
+}
+
+.right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.right h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.price {
+  font-size: 20px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.sizes, .quantity {
+  margin-bottom: 20px;
+}
+
+.sizes button, .quantity button {
+  background: none;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 8px 14px;
+  margin: 5px 10px 0 0;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+  font-weight: 600;
+  user-select: none;
+}
+
+.sizes button:hover,
+.quantity button:hover {
+  background: #222;
+  border-color: #ff0000;
+  color: #ff0000;
+}
+
+/* Виділення вибраного розміру */
+.sizes button.selected {
+  background-color: #ff0000;
+  color: #fff;
+  border-color: #ff0000;
+  font-weight: 700;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.quantity button {
+  border: 2px solid #555;
+  color: #fff;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: none;
+  transition: background 0.3s, border-color 0.3s;
+  user-select: none;
+}
+
+.quantity button:hover {
+  background: #333;
+  border-color: #ff0000;
+  color: #ff0000;
+}
+
+.quantity span {
+  min-width: 25px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Кнопки дій */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.actions .add {
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.actions .add:hover {
+  background-color: #ff0000;
+  border-color: #ff0000;
+  color: #fff;
+}
+
+.actions .buy {
+  padding: 10px 20px;
+  border: none;
+  background: #ff0000;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.actions .buy:hover {
+  background-color: #cc0000;
+}
+
+/* Опис */
+.description ul {
+  margin-top: 10px;
+  padding-left: 20px;
+  color: #ccc;
+}
+
+/* Таблиця розмірів */
+.size-chart {
+  width: 100%;
+  margin-top: 40px;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+.size-chart caption {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.size-chart th, .size-chart td {
+  padding: 8px 12px;
+  border: 1px solid #444;
+  text-align: center;
+}
